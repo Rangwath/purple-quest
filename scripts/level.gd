@@ -12,8 +12,8 @@ func _ready():
 		push_error("Player is not in the scene")
 		return
 		
-	var gems = get_tree().get_nodes_in_group("gems")
-	for gem in gems:
+	var all_gems = get_tree().get_nodes_in_group("gems")
+	for gem in all_gems:
 		gem.gem_picked.connect(_on_gem_picked)
 		
 	hud.set_gems_amount_label(gems_amount)

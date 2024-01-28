@@ -1,20 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://degv8omfuhpns"]
+[gd_scene load_steps=12 format=3 uid="uid://degv8omfuhpns"]
 
-[ext_resource type="Texture2D" uid="uid://xivn4h77oui6" path="res://icon.svg" id="1_4c265"]
 [ext_resource type="Script" path="res://scripts/gem.gd" id="1_b0633"]
+[ext_resource type="Texture2D" uid="uid://cg5b2v36djo50" path="res://assets/items/gem-idle.png" id="2_4j4ut"]
+[ext_resource type="Texture2D" uid="uid://cqab62w2e4f0" path="res://assets/items/gem-shine.png" id="3_oiuko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1uuw"]
-size = Vector2(10, 10)
+size = Vector2(7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq5gm"]
+atlas = ExtResource("2_4j4ut")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lekwu"]
+atlas = ExtResource("3_oiuko")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m6n1"]
+atlas = ExtResource("3_oiuko")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjl21"]
+atlas = ExtResource("3_oiuko")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r70ms"]
+atlas = ExtResource("3_oiuko")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwng"]
+atlas = ExtResource("3_oiuko")
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hblxo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4c265")
+"texture": SubResource("AtlasTexture_kq5gm")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lekwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m6n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjl21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r70ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiwng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq5gm")
+}],
+"loop": false,
+"name": &"shine",
+"speed": 10.0
 }]
 
 [node name="Gem" type="Area2D" groups=["gems"]]
@@ -23,10 +71,18 @@ collision_mask = 2
 script = ExtResource("1_b0633")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_a1uuw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.08, 0.08)
+position = Vector2(2.98023e-07, 3.57628e-07)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_hblxo")
+animation = &"shine"
+autoplay = "idle"
+
+[node name="AnimationTimer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
