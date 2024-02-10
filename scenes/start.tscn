@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnma0ppwm1fe5"]
+
+[ext_resource type="Script" path="res://scripts/start.gd" id="1_ewauf"]
+[ext_resource type="Texture2D" uid="uid://ddojtjo8xmhla" path="res://assets/items/direction-sign.png" id="1_wx6ld"]
+
+[node name="Start" type="Node2D"]
+z_index = -50
+script = ExtResource("1_ewauf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_wx6ld")
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(17, -8)
+gizmo_extents = 8.0

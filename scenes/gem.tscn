@@ -66,6 +66,7 @@ animations = [{
 }]
 
 [node name="Gem" type="Area2D" groups=["gems"]]
+z_index = -10
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_b0633")

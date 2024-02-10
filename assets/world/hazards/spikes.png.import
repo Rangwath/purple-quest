@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://st5syt7ikra"
-path="res://.godot/imported/tileset.png-f15c48513938bb8c73d02c054f47e260.ctex"
+uid="uid://bimlekdwsipm6"
+path="res://.godot/imported/spikes.png-5c2dc3f28ce432abb2af62b2d50bdc53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-f15c48513938bb8c73d02c054f47e260.ctex"]
+source_file="res://assets/world/hazards/spikes.png"
+dest_files=["res://.godot/imported/spikes.png-5c2dc3f28ce432abb2af62b2d50bdc53.ctex"]
 
 [params]
 

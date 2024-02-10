@@ -2,30 +2,47 @@ class_name Player
 
 extends CharacterBody2D
 
+signal player_killed
+
 @export var movement_speed = 90
-@export var jump_force = 160
+@export var jump_force = 170
 @export var min_jump_force = 100
 @export var gravity = 400
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var blood_expolosion = $BloodExplosionParticles
 @onready var jump_coyote_timer = $JumpCoyoteTimer
 @onready var jump_buffer_timer = $JumpBufferTimer
 
 var input_direction
+var active = true
+
+
+func _ready():
+	var traps = get_tree().get_nodes_in_group("traps")
+	for trap in traps:
+		trap.player_touched_trap.connect(_on_player_touched_trap)
 
 
 func _physics_process(delta):
+	if not active:
+		velocity = Vector2.ZERO
+	
 	apply_gravity(delta)
-	process_movement()
+	
+	if active:
+		process_movement()
 	
 	var was_on_floor = is_on_floor()
-	
+		
 	move_and_slide()
-	
+		
 	if was_on_floor && not is_on_floor():
 		jump_coyote_timer.start()
 	
-	process_jumping()
+	if active:
+		process_jumping()
+	
 	update_animations()
 
 
@@ -69,13 +86,50 @@ func apply_gravity(delta):
 
 
 func update_animations():
-	if is_on_floor():
-		if input_direction == 0:
-			animated_sprite.play("idle")
+	if active:
+		if is_on_floor():
+			if input_direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("run")
 		else:
-			animated_sprite.play("run")
-	else:
-		if velocity.y < 0:
-			animated_sprite.play("jump")
-		else:
-			animated_sprite.play("fall")
+			if velocity.y < 0:
+				animated_sprite.play("jump")
+			else:
+				animated_sprite.play("fall")
+
+
+func _on_player_touched_trap():
+	print("Player touched trap")
+	kill_player()
+
+
+func _on_animation_finished():
+	# When spawn animation is finished, activate the Player
+	if animated_sprite.animation == "spawn":
+		print("Player spawn finished")
+		active = true
+		print("Player Active: " + str(active))
+
+
+func spawn_player(position):
+	print("Player spawning")
+	active = false
+	print("Player Active: " + str(active))
+	global_position = position
+	animated_sprite.show()
+	animated_sprite.flip_h = false
+	animated_sprite.play("spawn")
+
+
+func kill_player():
+	print("Player killed")
+	active = false
+	print("Player Active: " + str(active))
+	
+	#Hide the Player sprite and start the blood explosion
+	animated_sprite.hide()
+	blood_expolosion.restart()
+	blood_expolosion.emitting = true
+	
+	player_killed.emit()

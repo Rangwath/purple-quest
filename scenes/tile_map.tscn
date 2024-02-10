@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1mkajiwntkqy"]
 
-[ext_resource type="Texture2D" uid="uid://st5syt7ikra" path="res://assets/tileset/tileset.png" id="1_dbuft"]
+[ext_resource type="Texture2D" uid="uid://st5syt7ikra" path="res://assets/world/tileset/tileset.png" id="1_dbuft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fsnh"]
 resource_name = "Tileset"
