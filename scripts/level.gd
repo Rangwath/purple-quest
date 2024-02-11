@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var hud = $UICanvas/HUD
 @onready var start = $Start
+@onready var end = $End
 
 var player = null
 var gems_amount = 0
@@ -18,6 +19,8 @@ func _ready():
 	for gem in all_gems:
 		gem.gem_picked.connect(_on_gem_picked)
 		
+	end.body_entered.connect(_on_end_body_entered)
+		
 	hud.set_gems_amount_label(gems_amount)
 	
 	spawn_player_after_delay(0.5)
@@ -30,6 +33,14 @@ func on_player_killed():
 func _on_gem_picked(amount):
 	gems_amount += amount
 	hud.set_gems_amount_label(gems_amount)
+
+
+func _on_end_body_entered(_body):
+	player.enter_portal()
+	
+	await get_tree().create_timer(2).timeout
+	
+	get_tree().reload_current_scene()
 
 
 func spawn_player_after_delay(delay):

@@ -10,7 +10,8 @@ signal player_killed
 @export var gravity = 400
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var blood_expolosion = $BloodExplosionParticles
+@onready var blood_vfx = $BloodExplosionParticles
+@onready var portal_vfx = $PortalImplosionParticles
 @onready var jump_coyote_timer = $JumpCoyoteTimer
 @onready var jump_buffer_timer = $JumpBufferTimer
 
@@ -19,6 +20,9 @@ var active = true
 
 
 func _ready():
+	active = false
+	animated_sprite.hide()
+	
 	var traps = get_tree().get_nodes_in_group("traps")
 	for trap in traps:
 		trap.player_touched_trap.connect(_on_player_touched_trap)
@@ -112,11 +116,11 @@ func _on_animation_finished():
 		print("Player Active: " + str(active))
 
 
-func spawn_player(position):
+func spawn_player(spawn_position):
 	print("Player spawning")
 	active = false
 	print("Player Active: " + str(active))
-	global_position = position
+	global_position = spawn_position
 	animated_sprite.show()
 	animated_sprite.flip_h = false
 	animated_sprite.play("spawn")
@@ -129,7 +133,17 @@ func kill_player():
 	
 	#Hide the Player sprite and start the blood explosion
 	animated_sprite.hide()
-	blood_expolosion.restart()
-	blood_expolosion.emitting = true
+	blood_vfx.restart()
+	blood_vfx.emitting = true
 	
 	player_killed.emit()
+
+
+func enter_portal():
+	print("Player entered portal")
+	active = false
+	print("Player Active: " + str(active))
+	
+	animated_sprite.hide()
+	portal_vfx.restart()
+	portal_vfx.emitting = true
