@@ -27,7 +27,7 @@ func _ready():
 
 
 func on_player_killed():
-	spawn_player_after_delay(1)
+	reload_scene_after_delay(1)
 
 
 func _on_gem_picked(amount):
@@ -37,12 +37,14 @@ func _on_gem_picked(amount):
 
 func _on_end_body_entered(_body):
 	player.enter_portal()
-	
-	await get_tree().create_timer(2).timeout
-	
-	get_tree().reload_current_scene()
+	reload_scene_after_delay(2)
 
 
 func spawn_player_after_delay(delay):
 	await get_tree().create_timer(delay).timeout
 	player.spawn_player(start.get_spawn_position())
+
+
+func reload_scene_after_delay(delay):
+	await get_tree().create_timer(delay).timeout
+	get_tree().reload_current_scene()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6p0jj0ucc6f0"]
+[gd_scene load_steps=12 format=3 uid="uid://c6p0jj0ucc6f0"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_4o0st"]
 [ext_resource type="PackedScene" uid="uid://dnp45akrjr70d" path="res://scenes/player.tscn" id="1_4vr0j"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dp8ht2l30db41" path="res://scenes/spikes.tscn" id="8_3ourx"]
 [ext_resource type="PackedScene" uid="uid://bnma0ppwm1fe5" path="res://scenes/start.tscn" id="9_kucmf"]
 [ext_resource type="PackedScene" uid="uid://bqrov8ah3hyfg" path="res://scenes/end.tscn" id="10_q40n5"]
+[ext_resource type="PackedScene" uid="uid://crctyvf60aksm" path="res://scenes/blob.tscn" id="11_itdpu"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_4o0st")
@@ -31,8 +32,28 @@ script = ExtResource("6_lws2e")
 texture = ExtResource("6_p78mn")
 centered = false
 
+[node name="Start" parent="." instance=ExtResource("9_kucmf")]
+position = Vector2(152, 240)
+
+[node name="End" parent="." instance=ExtResource("10_q40n5")]
+position = Vector2(318, 64)
+
 [node name="Player" parent="." instance=ExtResource("1_4vr0j")]
 position = Vector2(169, 232)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Blob" parent="Enemies" instance=ExtResource("11_itdpu")]
+z_index = 5
+position = Vector2(175, 144)
+
+[node name="Blob2" parent="Enemies" instance=ExtResource("11_itdpu")]
+z_index = 5
+position = Vector2(-3, 112)
+
+[node name="Blob3" parent="Enemies" instance=ExtResource("11_itdpu")]
+z_index = 5
+position = Vector2(267, 64)
 
 [node name="Gems" type="Node2D" parent="."]
 
@@ -73,9 +94,3 @@ position = Vector2(88, 256)
 
 [node name="Spikes3" parent="Traps" instance=ExtResource("8_3ourx")]
 position = Vector2(56, 256)
-
-[node name="Start" parent="." instance=ExtResource("9_kucmf")]
-position = Vector2(152, 240)
-
-[node name="End" parent="." instance=ExtResource("10_q40n5")]
-position = Vector2(318, 64)

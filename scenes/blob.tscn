@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://crctyvf60aksm"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_guw34"]
+[ext_resource type="Texture2D" uid="uid://ijldjqv6u3jr" path="res://assets/enemies/blob-idle.png" id="1_m310x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paees"]
+atlas = ExtResource("1_m310x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s7x3"]
+atlas = ExtResource("1_m310x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idove"]
+atlas = ExtResource("1_m310x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a2om"]
+atlas = ExtResource("1_m310x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4rlp"]
+atlas = ExtResource("1_m310x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgqir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paees")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s7x3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idove")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a2om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4rlp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32dgn"]
+size = Vector2(6, 4)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ls2ou"]
+radius = 3.5
+height = 10.0
+
+[node name="Blob" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_guw34")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_mgqir")
+autoplay = "default"
+frame_progress = 0.471439
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_32dgn")
+
+[node name="GroundCheckRayCast2D" type="RayCast2D" parent="."]
+position = Vector2(7, -3)
+target_position = Vector2(0, 10)
+
+[node name="HitboxArea2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea2D"]
+position = Vector2(0, -3.5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ls2ou")
+
+[connection signal="body_entered" from="HitboxArea2D" to="." method="_on_hitbox_body_entered"]

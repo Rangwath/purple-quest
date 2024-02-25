@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 signal player_killed
 
-@export var movement_speed = 90
+@export var movement_speed = 100
 @export var jump_force = 170
 @export var min_jump_force = 100
 @export var gravity = 400
@@ -25,7 +25,11 @@ func _ready():
 	
 	var traps = get_tree().get_nodes_in_group("traps")
 	for trap in traps:
-		trap.player_touched_trap.connect(_on_player_touched_trap)
+		trap.player_touched_trap.connect(on_player_touched_trap)
+	
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	for enemy in enemies:
+		enemy.player_touched_enemy.connect(on_player_touched_enemy)
 
 
 func _physics_process(delta):
@@ -103,8 +107,13 @@ func update_animations():
 				animated_sprite.play("fall")
 
 
-func _on_player_touched_trap():
+func on_player_touched_trap():
 	print("Player touched trap")
+	kill_player()
+
+
+func on_player_touched_enemy():
+	print("Player touched enemy")
 	kill_player()
 
 
@@ -127,6 +136,9 @@ func spawn_player(spawn_position):
 
 
 func kill_player():
+	if not active:
+		return
+	
 	print("Player killed")
 	active = false
 	print("Player Active: " + str(active))
