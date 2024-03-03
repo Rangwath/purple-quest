@@ -25,7 +25,6 @@ func _physics_process(_delta):
 
 
 func flip():
-	print("Flipping enemy")
 	facing_right = not facing_right
 	
 	scale.x = scale.x * -1

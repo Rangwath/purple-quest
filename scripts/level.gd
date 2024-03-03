@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var hud = $UICanvas/HUD
+@onready var game_ui = $GameUI
+@onready var hud = $GameUI/HUD
 @onready var start = $Start
 @onready var end = $End
 @onready var levelTimer = $LevelTimer
@@ -29,7 +30,7 @@ func _ready():
 	spawn_player_after_delay(0.5)
 
 
-func _process(_delta):
+func _physics_process(_delta):
 	if (not levelTimer.is_stopped()):
 		hud.set_timer_label(str(levelTimer.wait_time - levelTimer.time_left).pad_decimals(2))
 
@@ -49,8 +50,11 @@ func _on_gem_picked(amount):
 func _on_end_body_entered(_body):
 	hud.set_timer_label(str(levelTimer.wait_time - levelTimer.time_left).pad_decimals(2))
 	levelTimer.stop()
+	
 	player.enter_portal()
-	reload_scene_after_delay(2)
+	
+	await get_tree().create_timer(2).timeout
+	game_ui.show_win_screen(true)
 
 
 func spawn_player_after_delay(delay):

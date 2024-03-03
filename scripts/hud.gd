@@ -2,8 +2,8 @@ extends Control
 
 
 func set_gems_amount_label(amount):
-	$GemsAmountLabel.text = str(amount)
+	$GemsPanel/GemsAmountLabel.text = str(amount)
 
 
 func set_timer_label(time):
-	$TimerLabel.text = str(time)
+	$TimerPanel/TimerLabel.text = str(time)

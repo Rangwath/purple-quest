@@ -41,6 +41,7 @@ _data = {
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
+layer = 100
 script = ExtResource("1_2ef7r")
 
 [node name="DissolveRect" type="ColorRect" parent="."]
