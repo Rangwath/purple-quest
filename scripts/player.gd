@@ -3,6 +3,7 @@ class_name Player
 extends CharacterBody2D
 
 signal player_killed
+signal player_spawned
 
 @export var movement_speed = 100
 @export var jump_force = 170
@@ -123,6 +124,7 @@ func _on_animation_finished():
 		print("Player spawn finished")
 		active = true
 		print("Player Active: " + str(active))
+		player_spawned.emit()
 
 
 func spawn_player(spawn_position):
