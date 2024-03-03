@@ -27,7 +27,7 @@ func _ready():
 
 
 func on_player_killed():
-	reload_scene_after_delay(1)
+	reload_scene_after_delay(0.8)
 
 
 func _on_gem_picked(amount):
@@ -47,4 +47,4 @@ func spawn_player_after_delay(delay):
 
 func reload_scene_after_delay(delay):
 	await get_tree().create_timer(delay).timeout
-	get_tree().reload_current_scene()
+	SceneTransition.reload_scene()
