@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var score_time_limit = 30
+
 @onready var game_ui = $GameUI
 @onready var hud = $GameUI/HUD
 @onready var start = $Start
@@ -8,6 +10,7 @@ extends Node2D
 
 var player = null
 var gems_amount = 0
+var elapsed_level_time = 0
 
 
 func _ready():
@@ -32,11 +35,12 @@ func _ready():
 
 func _physics_process(_delta):
 	if (not levelTimer.is_stopped()):
-		hud.set_timer_label(str(levelTimer.wait_time - levelTimer.time_left).pad_decimals(2))
+		hud.set_timer_label(str(get_elapsed_level_time()).pad_decimals(2))
 
 
 func _on_player_spawned():
 	levelTimer.start()
+
 
 func _on_player_killed():
 	reload_scene_after_delay(0.8)
@@ -48,13 +52,14 @@ func _on_gem_picked(amount):
 
 
 func _on_end_body_entered(_body):
-	hud.set_timer_label(str(levelTimer.wait_time - levelTimer.time_left).pad_decimals(2))
+	hud.set_timer_label(str(get_elapsed_level_time()).pad_decimals(2))
 	levelTimer.stop()
 	
 	player.enter_portal()
 	
 	await get_tree().create_timer(2).timeout
 	game_ui.show_win_screen(true)
+	calculate_and_display_score()
 
 
 func spawn_player_after_delay(delay):
@@ -65,3 +70,25 @@ func spawn_player_after_delay(delay):
 func reload_scene_after_delay(delay):
 	await get_tree().create_timer(delay).timeout
 	SceneTransition.reload_scene()
+
+
+func get_elapsed_level_time():
+	if (not levelTimer.is_stopped()):
+		elapsed_level_time = levelTimer.wait_time - levelTimer.time_left
+	
+	return elapsed_level_time
+
+
+func calculate_and_display_score():
+	var timer_score = 0
+	
+	if (get_elapsed_level_time() < score_time_limit):
+		timer_score = floor((score_time_limit - get_elapsed_level_time()) * 100)
+	
+	var gems_score = gems_amount * 1000
+	var total_score = timer_score + gems_score
+	
+	game_ui.set_timer_score_label(str(timer_score))
+	game_ui.set_gems_score_label(str(gems_score))
+	game_ui.set_total_score_label(str(total_score))
+	
