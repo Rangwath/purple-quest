@@ -47,6 +47,7 @@ func _on_player_killed():
 
 
 func _on_gem_picked(amount):
+	AudioPlayer.play_gem_pickup_sfx()
 	gems_amount += amount
 	hud.set_gems_amount_label(gems_amount)
 
@@ -58,6 +59,8 @@ func _on_end_body_entered(_body):
 	player.enter_portal()
 	
 	await get_tree().create_timer(2).timeout
+	
+	AudioPlayer.play_win_sfx()
 	game_ui.show_win_screen(true)
 	calculate_and_display_score()
 

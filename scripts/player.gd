@@ -132,9 +132,12 @@ func spawn_player(spawn_position):
 	active = false
 	print("Player Active: " + str(active))
 	global_position = spawn_position
+	
 	animated_sprite.show()
 	animated_sprite.flip_h = false
 	animated_sprite.play("spawn")
+	
+	AudioPlayer.play_player_spawn_sfx()
 
 
 func kill_player():
@@ -144,6 +147,8 @@ func kill_player():
 	print("Player killed")
 	active = false
 	print("Player Active: " + str(active))
+	
+	AudioPlayer.play_player_death_sfx()
 	
 	#Hide the Player sprite and start the blood explosion
 	animated_sprite.hide()
@@ -157,6 +162,8 @@ func enter_portal():
 	print("Player entered portal")
 	active = false
 	print("Player Active: " + str(active))
+	
+	AudioPlayer.play_portal_sfx()
 	
 	animated_sprite.hide()
 	portal_vfx.restart()
