@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1mkajiwntkqy" path="res://scenes/tile_map.tscn" id="2_2iitt"]
 [ext_resource type="PackedScene" uid="uid://5tp8jugm2nga" path="res://scenes/game_ui.tscn" id="3_hreqf"]
 [ext_resource type="PackedScene" uid="uid://degv8omfuhpns" path="res://scenes/gem.tscn" id="5_cms7j"]
-[ext_resource type="Script" path="res://scripts/parallax_test.gd" id="6_lws2e"]
+[ext_resource type="Script" path="res://scripts/parallax_clouds.gd" id="6_lws2e"]
 [ext_resource type="Texture2D" uid="uid://cryhhtsicr" path="res://assets/background/background.png" id="6_p78mn"]
 [ext_resource type="PackedScene" uid="uid://dp8ht2l30db41" path="res://scenes/spikes_ground.tscn" id="8_3ourx"]
 [ext_resource type="PackedScene" uid="uid://bnma0ppwm1fe5" path="res://scenes/start.tscn" id="9_kucmf"]
@@ -23,13 +23,13 @@ layer_0/tile_data = PackedInt32Array(983049, 196608, 3, 1048585, 131072, 5, 9830
 
 [node name="GameUI" parent="." instance=ExtResource("3_hreqf")]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="CloudsParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CloudsParallaxBackground"]
 motion_mirroring = Vector2(480, 270)
 script = ExtResource("6_lws2e")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudsParallaxBackground/ParallaxLayer"]
 texture = ExtResource("6_p78mn")
 centered = false
 
