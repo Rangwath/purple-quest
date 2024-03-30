@@ -1,14 +1,19 @@
 extends CanvasLayer
 
+@onready var win_screen_focus_button = $WinScreen/NextButton
+
 var next_level = null
 
 
 func _ready():
+	win_screen_focus_button.grab_focus()
+	
 	next_level = get_tree().current_scene.next_level
 
 
 func show_win_screen(flag: bool):
 	$WinScreen.visible = flag
+	win_screen_focus_button.grab_focus()
 
 
 func set_timer_score_label(score):
