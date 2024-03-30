@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var next_level: PackedScene = null
 @export var score_time_limit = 30
 
 @onready var game_ui = $GameUI
