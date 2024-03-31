@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_wclo8"]
 [ext_resource type="Texture2D" uid="uid://b4rhr2r82wteo" path="res://assets/gui/panel-timer.png" id="3_hxtl0"]
 [ext_resource type="Texture2D" uid="uid://bh3ydq1dwq5eq" path="res://assets/gui/panel-gems.png" id="4_hfr61"]
-[ext_resource type="Texture2D" uid="uid://dj4lse363ogfx" path="res://assets/gui/panel-menu.png" id="5_r7vlg"]
+[ext_resource type="Texture2D" uid="uid://ct04dquahq7s5" path="res://assets/gui/panel-menu-large.png" id="6_2g17d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jfnh8"]
 font = ExtResource("1_o1ps0")
@@ -105,7 +105,7 @@ offset_right = 80.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_r7vlg")
+texture = ExtResource("6_2g17d")
 stretch_mode = 2
 
 [node name="WinLabel" type="Label" parent="WinScreen"]
@@ -114,9 +114,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -64.5
-offset_top = 9.0
+offset_top = -17.0
 offset_right = 64.5
-offset_bottom = 33.0
+offset_bottom = 7.0
 grow_horizontal = 2
 text = "LEVEL COMPLETED"
 label_settings = SubResource("LabelSettings_013u4")
@@ -129,9 +129,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = -28.0
+offset_top = -54.0
 offset_right = -10.0
-offset_bottom = -15.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "TIMER SCORE"
@@ -146,9 +146,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
-offset_top = -28.0
+offset_top = -54.0
 offset_right = 42.0
-offset_bottom = -15.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "999999"
@@ -162,9 +162,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = -11.0
+offset_top = -37.0
 offset_right = -10.0
-offset_bottom = 2.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "GEMS SCORE"
@@ -179,9 +179,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
-offset_top = -11.0
+offset_top = -37.0
 offset_right = 42.0
-offset_bottom = 2.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "999999"
@@ -195,8 +195,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -65.0
+offset_top = -26.0
 offset_right = 64.0
-offset_bottom = 13.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "---------------------------------"
@@ -210,9 +211,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = 13.0
+offset_top = -13.0
 offset_right = -10.0
-offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "TOTAL SCORE"
@@ -227,35 +227,50 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
-offset_top = 13.0
+offset_top = -13.0
 offset_right = 42.0
-offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "999999"
 label_settings = SubResource("LabelSettings_jfnh8")
 
 [node name="NextButton" type="Button" parent="WinScreen"]
-layout_mode = 0
-offset_left = 90.0
-offset_top = 97.0
-offset_right = 150.0
-offset_bottom = 118.0
-focus_neighbor_left = NodePath("../RestartButton")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 7.0
+offset_right = 30.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_o1ps0")
 theme_override_font_sizes/font_size = 10
 text = "NEXT"
 
 [node name="RestartButton" type="Button" parent="WinScreen"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 97.0
-offset_right = 70.0
-offset_bottom = 118.0
-focus_neighbor_right = NodePath("../NextButton")
+offset_left = 50.0
+offset_top = 96.0
+offset_right = 110.0
+offset_bottom = 117.0
 theme_override_fonts/font = ExtResource("1_o1ps0")
 theme_override_font_sizes/font_size = 10
 text = "RESTART"
 
+[node name="MainMenuButton" type="Button" parent="WinScreen"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 121.0
+offset_right = 110.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("1_o1ps0")
+theme_override_font_sizes/font_size = 10
+text = "MAIN MENU"
+
 [connection signal="pressed" from="WinScreen/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="WinScreen/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="WinScreen/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

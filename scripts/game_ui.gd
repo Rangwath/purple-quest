@@ -38,3 +38,7 @@ func _on_next_button_pressed():
 
 func _on_restart_button_pressed():
 	SceneTransition.reload_scene()
+
+
+func _on_main_menu_button_pressed():
+	SceneTransition.load_main_menu_scene()
