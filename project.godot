@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="Purple Quest"
-run/main_scene="res://scenes/levels/level_01.tscn"
+run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SceneTransition="*res://scenes/ui_and_audio/scene_transition.tscn"
-AudioPlayer="*res://scenes/ui_and_audio/audio_player.tscn"
-MusicPlayer="*res://scenes/ui_and_audio/music_player.tscn"
+SceneTransition="*res://scenes/ui/scene_transition.tscn"
+AudioPlayer="*res://scenes/audio/audio_player.tscn"
+MusicPlayer="*res://scenes/audio/music_player.tscn"
 
 [display]
 

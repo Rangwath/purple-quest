@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://degv8omfuhpns"]
 
-[ext_resource type="Script" path="res://scripts/gem.gd" id="1_b0633"]
+[ext_resource type="Script" path="res://scripts/gameplay/gem.gd" id="1_b0633"]
 [ext_resource type="Texture2D" uid="uid://cg5b2v36djo50" path="res://assets/items/gem-idle.png" id="2_4j4ut"]
 [ext_resource type="Texture2D" uid="uid://cqab62w2e4f0" path="res://assets/items/gem-shine.png" id="3_oiuko"]
 

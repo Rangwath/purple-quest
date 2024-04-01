@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dy2ryhvssueki"]
 
-[ext_resource type="Script" path="res://scripts/parallax_clouds.gd" id="4_abw27"]
-[ext_resource type="Texture2D" uid="uid://cryhhtsicr" path="res://assets/background/background.png" id="5_q3iwv"]
+[ext_resource type="Script" path="res://scripts/gameplay/parallax_clouds.gd" id="4_abw27"]
+[ext_resource type="Texture2D" uid="uid://bn752jo4k75vf" path="res://assets/background/background.png" id="5_q3iwv"]
 
 [node name="CloudsBackground" type="ParallaxBackground"]
 

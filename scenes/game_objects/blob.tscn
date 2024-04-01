@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://crctyvf60aksm"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_guw34"]
+[ext_resource type="Script" path="res://scripts/gameplay/enemy.gd" id="1_guw34"]
 [ext_resource type="Texture2D" uid="uid://ijldjqv6u3jr" path="res://assets/enemies/blob-idle.png" id="1_m310x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_paees"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://cmay1erls7u43"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_brkfd"]
+[ext_resource type="Script" path="res://scripts/gameplay/level.gd" id="1_brkfd"]
 [ext_resource type="PackedScene" uid="uid://c1mkajiwntkqy" path="res://scenes/game_objects/tile_map.tscn" id="2_wwt0j"]
 [ext_resource type="PackedScene" uid="uid://dy2ryhvssueki" path="res://scenes/game_objects/background_clouds.tscn" id="3_1id5h"]
-[ext_resource type="PackedScene" uid="uid://5tp8jugm2nga" path="res://scenes/ui_and_audio/game_ui.tscn" id="4_lbak2"]
+[ext_resource type="PackedScene" uid="uid://5tp8jugm2nga" path="res://scenes/ui/game_ui.tscn" id="4_lbak2"]
 [ext_resource type="PackedScene" uid="uid://bnma0ppwm1fe5" path="res://scenes/game_objects/start.tscn" id="5_aoiyn"]
 [ext_resource type="PackedScene" uid="uid://bqrov8ah3hyfg" path="res://scenes/game_objects/end.tscn" id="6_ytxaw"]
 [ext_resource type="PackedScene" uid="uid://dnp45akrjr70d" path="res://scenes/game_objects/player.tscn" id="7_pr5t0"]

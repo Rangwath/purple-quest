@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://b2cyxgjjo8ukq"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_5sum6"]
+[ext_resource type="Script" path="res://scripts/gameplay/level.gd" id="1_dqtbq"]
 [ext_resource type="PackedScene" uid="uid://c1mkajiwntkqy" path="res://scenes/game_objects/tile_map.tscn" id="2_q61wg"]
 [ext_resource type="PackedScene" uid="uid://j4tcs20ukt48" path="res://scenes/levels/level_03.tscn" id="2_wgrof"]
 [ext_resource type="PackedScene" uid="uid://dy2ryhvssueki" path="res://scenes/game_objects/background_clouds.tscn" id="3_8jkgp"]
-[ext_resource type="PackedScene" uid="uid://5tp8jugm2nga" path="res://scenes/ui_and_audio/game_ui.tscn" id="4_wi6rc"]
 [ext_resource type="PackedScene" uid="uid://bqrov8ah3hyfg" path="res://scenes/game_objects/end.tscn" id="5_85niy"]
+[ext_resource type="PackedScene" uid="uid://5tp8jugm2nga" path="res://scenes/ui/game_ui.tscn" id="5_iac75"]
 [ext_resource type="PackedScene" uid="uid://bnma0ppwm1fe5" path="res://scenes/game_objects/start.tscn" id="6_h2dk2"]
 [ext_resource type="PackedScene" uid="uid://dnp45akrjr70d" path="res://scenes/game_objects/player.tscn" id="7_wsyv7"]
 [ext_resource type="PackedScene" uid="uid://degv8omfuhpns" path="res://scenes/game_objects/gem.tscn" id="8_y8cyq"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dp8ht2l30db41" path="res://scenes/game_objects/spikes_ground.tscn" id="10_kape0"]
 
 [node name="Level02" type="Node2D"]
-script = ExtResource("1_5sum6")
+script = ExtResource("1_dqtbq")
 next_level = ExtResource("2_wgrof")
 score_time_limit = 70
 metadata/_edit_vertical_guides_ = [-144.0, 512.0]
@@ -25,7 +25,7 @@ layer_0/tile_data = PackedInt32Array(1048585, 131072, 5, 1048586, 196608, 5, 104
 [node name="CloudsBackground" parent="." instance=ExtResource("3_8jkgp")]
 scroll_offset = Vector2(1104, 571)
 
-[node name="GameUI" parent="." instance=ExtResource("4_wi6rc")]
+[node name="GameUI" parent="." instance=ExtResource("5_iac75")]
 
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 999.0

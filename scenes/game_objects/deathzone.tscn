@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hf2g5f0atdpl"]
 
-[ext_resource type="Script" path="res://scripts/trap.gd" id="1_filod"]
+[ext_resource type="Script" path="res://scripts/gameplay/trap.gd" id="1_filod"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5drm8"]
 size = Vector2(1000, 20)

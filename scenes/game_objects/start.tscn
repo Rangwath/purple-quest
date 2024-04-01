@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnma0ppwm1fe5"]
 
-[ext_resource type="Script" path="res://scripts/start.gd" id="1_ewauf"]
+[ext_resource type="Script" path="res://scripts/gameplay/start.gd" id="1_ewauf"]
 [ext_resource type="Texture2D" uid="uid://ddojtjo8xmhla" path="res://assets/world/direction-sign.png" id="2_dnab6"]
 
 [node name="Start" type="Node2D"]

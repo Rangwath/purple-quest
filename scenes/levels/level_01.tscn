@@ -1,17 +1,17 @@
 [gd_scene load_steps=10 format=3 uid="uid://c6p0jj0ucc6f0"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_8e787"]
+[ext_resource type="Script" path="res://scripts/gameplay/level.gd" id="1_ithw8"]
 [ext_resource type="PackedScene" uid="uid://b2cyxgjjo8ukq" path="res://scenes/levels/level_02.tscn" id="2_g7u6s"]
 [ext_resource type="PackedScene" uid="uid://c1mkajiwntkqy" path="res://scenes/game_objects/tile_map.tscn" id="2_xt5o3"]
 [ext_resource type="PackedScene" uid="uid://dy2ryhvssueki" path="res://scenes/game_objects/background_clouds.tscn" id="3_ra6e3"]
-[ext_resource type="PackedScene" uid="uid://5tp8jugm2nga" path="res://scenes/ui_and_audio/game_ui.tscn" id="4_54vpm"]
+[ext_resource type="PackedScene" uid="uid://5tp8jugm2nga" path="res://scenes/ui/game_ui.tscn" id="5_1rfdu"]
 [ext_resource type="PackedScene" uid="uid://bqrov8ah3hyfg" path="res://scenes/game_objects/end.tscn" id="5_cui4s"]
 [ext_resource type="PackedScene" uid="uid://bnma0ppwm1fe5" path="res://scenes/game_objects/start.tscn" id="6_8n1tc"]
 [ext_resource type="PackedScene" uid="uid://dnp45akrjr70d" path="res://scenes/game_objects/player.tscn" id="7_fru55"]
 [ext_resource type="PackedScene" uid="uid://degv8omfuhpns" path="res://scenes/game_objects/gem.tscn" id="8_pniws"]
 
 [node name="Level01" type="Node2D"]
-script = ExtResource("1_8e787")
+script = ExtResource("1_ithw8")
 next_level = ExtResource("2_g7u6s")
 score_time_limit = 60
 metadata/_edit_vertical_guides_ = [-144.0, 512.0]
@@ -22,7 +22,7 @@ layer_0/tile_data = PackedInt32Array(983049, 196608, 3, 1048585, 131072, 5, 9830
 
 [node name="CloudsBackground" parent="." instance=ExtResource("3_ra6e3")]
 
-[node name="GameUI" parent="." instance=ExtResource("4_54vpm")]
+[node name="GameUI" parent="." instance=ExtResource("5_1rfdu")]
 
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 999.0

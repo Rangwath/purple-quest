@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dp4ux8u7idftw"]
 
-[ext_resource type="Script" path="res://scripts/scene_transition.gd" id="1_rpx2h"]
-[ext_resource type="PackedScene" uid="uid://bwtqg4awxtia0" path="res://scenes/ui_and_audio/main_menu.tscn" id="2_83ljo"]
+[ext_resource type="Script" path="res://scripts/ui/scene_transition.gd" id="1_rpx2h"]
+[ext_resource type="PackedScene" uid="uid://bwtqg4awxtia0" path="res://scenes/ui/main_menu.tscn" id="2_83ljo"]
 
 [sub_resource type="Animation" id="Animation_wqq3p"]
 resource_name = "RESET"

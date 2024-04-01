@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5llwrqwk42sb"]
 
-[ext_resource type="Script" path="res://scripts/trap.gd" id="1_kogrl"]
+[ext_resource type="Script" path="res://scripts/gameplay/trap.gd" id="1_kogrl"]
 [ext_resource type="Texture2D" uid="uid://bimlekdwsipm6" path="res://assets/world/hazards/spikes.png" id="2_jbomv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scb84"]

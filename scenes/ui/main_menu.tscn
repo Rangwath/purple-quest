@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwtqg4awxtia0"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_gf1uo"]
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_gf1uo"]
 [ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="1_u5d7u"]
 [ext_resource type="PackedScene" uid="uid://c6p0jj0ucc6f0" path="res://scenes/levels/level_01.tscn" id="2_ce886"]
 

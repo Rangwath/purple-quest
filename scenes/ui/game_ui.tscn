@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://5tp8jugm2nga"]
 
-[ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_lgdev"]
+[ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="1_lgdev"]
 [ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="1_o1ps0"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="1_wclo8"]
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_wclo8"]
 [ext_resource type="Texture2D" uid="uid://b4rhr2r82wteo" path="res://assets/gui/panel-timer.png" id="3_hxtl0"]
 [ext_resource type="Texture2D" uid="uid://bh3ydq1dwq5eq" path="res://assets/gui/panel-gems.png" id="4_hfr61"]
 [ext_resource type="Texture2D" uid="uid://ct04dquahq7s5" path="res://assets/gui/panel-menu-large.png" id="6_2g17d"]
