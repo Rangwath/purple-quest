@@ -1,11 +1,12 @@
 extends CanvasLayer
 
+@export var main_menu: PackedScene = null
+@export var win_game_menu: PackedScene = null
+
 @onready var animation_player = $AnimationPlayer
 
-@export var main_menu: PackedScene = null
 
-
-func change_scene(target_scene : PackedScene):
+func change_scene(target_scene: PackedScene):
 	animation_player.play("dissolve")
 	await animation_player.animation_finished
 	get_tree().change_scene_to_packed(target_scene)
@@ -25,3 +26,11 @@ func load_main_menu_scene():
 		return
 	
 	change_scene(main_menu)
+
+
+func load_win_game_menu_scene():
+	if win_game_menu == null:
+		push_error("Win game menu scene is not set")
+		return
+	
+	change_scene(win_game_menu)

@@ -16,6 +16,8 @@ func _on_play_button_pressed():
 		push_error("The first level scene is not set")
 		return
 	
+	HighscoreHandler.clear_current_playthrough_highscore()
+	
 	MusicPlayer.fade_out_music()
 	
 	SceneTransition.change_scene(first_level)

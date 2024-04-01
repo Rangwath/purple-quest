@@ -7,7 +7,7 @@ signal gem_picked(amount)
 const TIMER_FROM = 2.0
 const TIMER_TO = 5.0
 
-@export var amount = 1
+@export var amount: int = 1
 
 @onready var animation_timer = $AnimationTimer
 @onready var animated_sprite = $AnimatedSprite2D

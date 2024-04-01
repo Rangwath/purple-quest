@@ -1,7 +1,8 @@
 extends Node2D
 
 @export var next_level: PackedScene = null
-@export var score_time_limit = 30
+@export var score_time_limit: int = 30
+@export var level_id: int = 0
 
 @onready var game_ui = $GameUI
 @onready var hud = $GameUI/HUD
@@ -95,4 +96,6 @@ func calculate_and_display_score():
 	game_ui.set_timer_score_label(str(timer_score))
 	game_ui.set_gems_score_label(str(gems_score))
 	game_ui.set_total_score_label(str(total_score))
+	
+	HighscoreHandler.add_playthrough_highscore(level_id, total_score)
 	

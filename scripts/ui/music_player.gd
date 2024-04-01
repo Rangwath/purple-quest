@@ -5,7 +5,9 @@ extends AudioStreamPlayer
 
 func start_music():
 	volume_db = default_volume
-	play()
+	
+	if not playing:
+		play()
 
 
 func stop_music():

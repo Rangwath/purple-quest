@@ -5,10 +5,10 @@ extends CharacterBody2D
 signal player_killed
 signal player_spawned
 
-@export var movement_speed = 100
-@export var jump_force = 170
-@export var min_jump_force = 100
-@export var gravity = 400
+@export var movement_speed: int = 100
+@export var jump_force: int = 170
+@export var min_jump_force: int = 100
+@export var gravity: int = 400
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var blood_vfx = $BloodExplosionParticles

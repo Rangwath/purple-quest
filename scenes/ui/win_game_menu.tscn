@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=3 uid="uid://8biqt0i44s68"]
+
+[ext_resource type="Script" path="res://scripts/ui/win_game_menu.gd" id="1_mjymt"]
+[ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="3_mqgqf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gkhb2"]
+font = ExtResource("3_mqgqf")
+font_size = 32
+font_color = Color(0.992157, 0.823529, 0.929412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_78ywu"]
+font = ExtResource("3_mqgqf")
+font_size = 10
+
+[node name="WinGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjymt")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0.141176, 0.380392, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 91.0
+text = "GAME COMPLETED"
+label_settings = SubResource("LabelSettings_gkhb2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 30.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_mqgqf")
+theme_override_font_sizes/font_size = 10
+text = "MAIN MENU"
+
+[node name="LabelBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -40.0
+offset_right = -10.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelLevel1" type="Label" parent="LabelBoxContainer"]
+layout_mode = 2
+text = "Level 1"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="LabelLevel2" type="Label" parent="LabelBoxContainer"]
+layout_mode = 2
+text = "Level 2"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="LabelLevel3" type="Label" parent="LabelBoxContainer"]
+layout_mode = 2
+text = "Level 3"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="LabelLevel4" type="Label" parent="LabelBoxContainer"]
+layout_mode = 2
+text = "Level 4"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="LabelLevel5" type="Label" parent="LabelBoxContainer"]
+layout_mode = 2
+text = "Level 5"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ScoreBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 84.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabelLevel1" type="Label" parent="ScoreBoxContainer"]
+layout_mode = 2
+text = "1234567890"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ScoreLabelLevel2" type="Label" parent="ScoreBoxContainer"]
+layout_mode = 2
+text = "1234567890"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ScoreLabelLevel3" type="Label" parent="ScoreBoxContainer"]
+layout_mode = 2
+text = "1234567890"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ScoreLabelLevel4" type="Label" parent="ScoreBoxContainer"]
+layout_mode = 2
+text = "1234567890"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ScoreLabelLevel5" type="Label" parent="ScoreBoxContainer"]
+layout_mode = 2
+text = "1234567890"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

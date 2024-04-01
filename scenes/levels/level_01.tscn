@@ -14,6 +14,7 @@
 script = ExtResource("1_ithw8")
 next_level = ExtResource("2_g7u6s")
 score_time_limit = 60
+level_id = 1
 metadata/_edit_vertical_guides_ = [-144.0, 512.0]
 
 [node name="TileMap" parent="." instance=ExtResource("2_xt5o3")]

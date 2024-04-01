@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwtqg4awxtia0"]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_gf1uo"]
-[ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="1_u5d7u"]
-[ext_resource type="PackedScene" uid="uid://c6p0jj0ucc6f0" path="res://scenes/levels/level_01.tscn" id="2_ce886"]
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_rr6nt"]
+[ext_resource type="PackedScene" uid="uid://c6p0jj0ucc6f0" path="res://scenes/levels/level_01.tscn" id="2_rimgh"]
+[ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="3_oi7tc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gkhb2"]
-font = ExtResource("1_u5d7u")
+font = ExtResource("3_oi7tc")
 font_size = 48
 font_color = Color(0.992157, 0.823529, 0.929412, 1)
 
@@ -16,8 +16,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gf1uo")
-first_level = ExtResource("2_ce886")
+script = ExtResource("1_rr6nt")
+first_level = ExtResource("2_rimgh")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -50,7 +50,7 @@ offset_right = 62.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_u5d7u")
+theme_override_fonts/font = ExtResource("3_oi7tc")
 theme_override_font_sizes/font_size = 16
 text = "PLAY"
 

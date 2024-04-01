@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 signal player_touched_enemy
 
-@export var movement_speed = 15
+@export var movement_speed: int = 15
 
 @onready var ground_check_raycast = $GroundCheckRayCast2D
 @onready var wall_check_raycast = $WallCheckRayCast2D
