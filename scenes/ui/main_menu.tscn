@@ -7,7 +7,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_gkhb2"]
 font = ExtResource("3_oi7tc")
 font_size = 48
-font_color = Color(0.992157, 0.823529, 0.929412, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -44,14 +43,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -16.0
-offset_right = 62.0
-offset_bottom = 17.0
+offset_left = -60.0
+offset_top = -16.5
+offset_right = 60.0
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_oi7tc")
 theme_override_font_sizes/font_size = 16
 text = "PLAY"
 
+[node name="HighscoreButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 35.0
+offset_right = 30.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_oi7tc")
+theme_override_font_sizes/font_size = 10
+text = "HIGHSCORE"
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HighscoreButton" to="." method="_on_highscore_button_pressed"]

@@ -21,3 +21,7 @@ func _on_play_button_pressed():
 	MusicPlayer.fade_out_music()
 	
 	SceneTransition.change_scene(first_level)
+
+
+func _on_highscore_button_pressed():
+	SceneTransition.load_highscore_menu_scene()

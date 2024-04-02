@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="1_gf3kv"]
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="2_6awoh"]
-[ext_resource type="Texture2D" uid="uid://b4rhr2r82wteo" path="res://assets/gui/panel-timer.png" id="3_5xgij"]
+[ext_resource type="Texture2D" uid="uid://b4rhr2r82wteo" path="res://assets/ui/panel-timer.png" id="3_1fn61"]
 [ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="4_ru5dt"]
-[ext_resource type="Texture2D" uid="uid://bh3ydq1dwq5eq" path="res://assets/gui/panel-gems.png" id="5_gsc5n"]
-[ext_resource type="Texture2D" uid="uid://ct04dquahq7s5" path="res://assets/gui/panel-menu-large.png" id="6_oydtc"]
+[ext_resource type="Texture2D" uid="uid://bh3ydq1dwq5eq" path="res://assets/ui/panel-gems.png" id="5_f7rhf"]
+[ext_resource type="Texture2D" uid="uid://ct04dquahq7s5" path="res://assets/ui/panel-menu-large.png" id="6_0nwvp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jfnh8"]
 font = ExtResource("4_ru5dt")
@@ -33,7 +33,7 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 65.0
 offset_bottom = 33.0
-texture = ExtResource("3_5xgij")
+texture = ExtResource("3_1fn61")
 stretch_mode = 2
 
 [node name="TimerLabel" type="Label" parent="HUD/TimerPanel"]
@@ -58,7 +58,7 @@ offset_left = 415.0
 offset_top = 1.0
 offset_right = 479.0
 offset_bottom = 33.0
-texture = ExtResource("5_gsc5n")
+texture = ExtResource("5_f7rhf")
 stretch_mode = 2
 
 [node name="GemsAmountLabel" type="Label" parent="HUD/GemsPanel"]
@@ -105,7 +105,7 @@ offset_right = 80.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_oydtc")
+texture = ExtResource("6_0nwvp")
 stretch_mode = 2
 
 [node name="WinLabel" type="Label" parent="WinScreen"]

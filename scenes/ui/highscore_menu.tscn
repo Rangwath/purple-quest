@@ -1,24 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://8biqt0i44s68"]
+[gd_scene load_steps=6 format=3 uid="uid://b6w7oh4omg086"]
 
-[ext_resource type="Script" path="res://scripts/ui/win_game_menu.gd" id="1_mjymt"]
-[ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="3_mqgqf"]
+[ext_resource type="Script" path="res://scripts/ui/highscore_menu.gd" id="1_hr8a1"]
+[ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="2_v1b4y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gkhb2"]
-font = ExtResource("3_mqgqf")
+font = ExtResource("2_v1b4y")
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_78ywu"]
-font = ExtResource("3_mqgqf")
+font = ExtResource("2_v1b4y")
 font_size = 10
 
-[node name="WinGameMenu" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_gkhhu"]
+font = ExtResource("2_v1b4y")
+font_size = 10
+
+[node name="HighscoreMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mjymt")
+script = ExtResource("1_hr8a1")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -34,27 +38,10 @@ layout_mode = 0
 offset_top = -8.0
 offset_right = 480.0
 offset_bottom = 83.0
-text = "GAME COMPLETED"
+text = "HIGHSCORE"
 label_settings = SubResource("LabelSettings_gkhb2")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="MainMenuButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -30.0
-offset_top = -46.0
-offset_right = 30.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_mqgqf")
-theme_override_font_sizes/font_size = 10
-text = "MAIN MENU"
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
@@ -64,12 +51,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -50.5
-offset_top = -58.0
+offset_top = -64.0
 offset_right = 50.5
-offset_bottom = -45.0
+offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "YOUR PLAYTHROUGH SCORE"
+text = "YOUR ALL-TIME HIGHSCORE"
 label_settings = SubResource("LabelSettings_78ywu")
 horizontal_alignment = 1
 
@@ -80,10 +67,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -26.0
-offset_right = -10.0
-offset_bottom = 55.0
+offset_left = -62.0
+offset_top = -35.0
+offset_right = -22.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -119,10 +106,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = -26.0
-offset_right = 84.0
-offset_bottom = 55.0
+offset_top = -35.0
+offset_right = 64.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -130,25 +116,96 @@ grow_vertical = 2
 layout_mode = 2
 text = "1234567890"
 label_settings = SubResource("LabelSettings_78ywu")
+horizontal_alignment = 2
 
 [node name="ScoreLabelLevel2" type="Label" parent="ScoreBoxContainer"]
 layout_mode = 2
 text = "1234567890"
 label_settings = SubResource("LabelSettings_78ywu")
+horizontal_alignment = 2
 
 [node name="ScoreLabelLevel3" type="Label" parent="ScoreBoxContainer"]
 layout_mode = 2
 text = "1234567890"
 label_settings = SubResource("LabelSettings_78ywu")
+horizontal_alignment = 2
 
 [node name="ScoreLabelLevel4" type="Label" parent="ScoreBoxContainer"]
 layout_mode = 2
 text = "1234567890"
 label_settings = SubResource("LabelSettings_78ywu")
+horizontal_alignment = 2
 
 [node name="ScoreLabelLevel5" type="Label" parent="ScoreBoxContainer"]
 layout_mode = 2
 text = "1234567890"
 label_settings = SubResource("LabelSettings_78ywu")
+horizontal_alignment = 2
+
+[node name="SeparatorLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 44.0
+offset_right = 64.5
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "---------------------------------"
+label_settings = SubResource("LabelSettings_gkhhu")
+
+[node name="TotalLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = 58.0
+offset_right = -11.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TOTAL"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="TotalScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = 58.0
+offset_right = 64.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_78ywu")
+horizontal_alignment = 2
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 30.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_v1b4y")
+theme_override_font_sizes/font_size = 10
+text = "MAIN MENU"
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

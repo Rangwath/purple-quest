@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @export var main_menu: PackedScene = null
 @export var win_game_menu: PackedScene = null
+@export var highscore_menu: PackedScene = null
 
 @onready var animation_player = $AnimationPlayer
 
@@ -34,3 +35,11 @@ func load_win_game_menu_scene():
 		return
 	
 	change_scene(win_game_menu)
+
+
+func load_highscore_menu_scene():
+	if highscore_menu == null:
+		push_error("Highscore menu scene is not set")
+		return
+	
+	change_scene(highscore_menu)
