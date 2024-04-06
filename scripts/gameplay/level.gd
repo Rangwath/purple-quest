@@ -13,6 +13,7 @@ extends Node2D
 var player = null
 var gems_amount = 0
 var elapsed_level_time = 0
+var is_level_finished = false
 
 
 func _ready():
@@ -55,6 +56,8 @@ func _on_gem_picked(amount):
 
 
 func _on_end_body_entered(_body):
+	is_level_finished = true
+	
 	hud.set_timer_label(str(get_elapsed_level_time()).pad_decimals(2))
 	levelTimer.stop()
 	

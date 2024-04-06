@@ -12,6 +12,7 @@ font = ExtResource("3_mqgqf")
 font_size = 10
 
 [node name="WinGameMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
