@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwtqg4awxtia0"]
+[gd_scene load_steps=6 format=3 uid="uid://bwtqg4awxtia0"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_rr6nt"]
 [ext_resource type="PackedScene" uid="uid://c6p0jj0ucc6f0" path="res://scenes/levels/level_01.tscn" id="2_rimgh"]
@@ -7,6 +7,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_gkhb2"]
 font = ExtResource("3_oi7tc")
 font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_nxut6"]
+font = ExtResource("3_oi7tc")
+font_size = 10
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -70,6 +74,35 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_oi7tc")
 theme_override_font_sizes/font_size = 10
 text = "HIGHSCORE"
+
+[node name="CopyrightLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -29.0
+offset_right = 96.0
+offset_bottom = -14.0
+grow_vertical = 0
+text = "© 2024 RGWGAMES"
+label_settings = SubResource("LabelSettings_nxut6")
+vertical_alignment = 1
+
+[node name="CopyrightLabel2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 384.0
+offset_top = -29.0
+offset_right = 464.0
+offset_bottom = -14.0
+grow_vertical = 0
+text = "Version 0.1"
+label_settings = SubResource("LabelSettings_nxut6")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="HighscoreButton" to="." method="_on_highscore_button_pressed"]

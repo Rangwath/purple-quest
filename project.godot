@@ -21,6 +21,7 @@ SceneTransition="*res://scenes/ui/scene_transition.tscn"
 AudioPlayer="*res://scenes/audio/audio_player.tscn"
 MusicPlayer="*res://scenes/audio/music_player.tscn"
 HighscoreHandler="*res://scenes/ui/highscore_handler.tscn"
+ParticlesPreLoader="*res://scenes/game_objects/particles_pre_loader.tscn"
 
 [display]
 

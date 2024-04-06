@@ -3,7 +3,6 @@ extends Node
 const HIGHSCORE_FILE_PATH = "user://game_data.dat"
 
 var playthrough_highscore = {}
-#var total_highscore = {}
 
 
 func clear_current_playthrough_highscore():
