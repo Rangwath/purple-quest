@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp4ux8u7idftw"]
+[gd_scene load_steps=9 format=3 uid="uid://dp4ux8u7idftw"]
 
 [ext_resource type="Script" path="res://scripts/ui/scene_transition.gd" id="1_rpx2h"]
 [ext_resource type="PackedScene" uid="uid://bwtqg4awxtia0" path="res://scenes/ui/main_menu.tscn" id="2_83ljo"]
-[ext_resource type="PackedScene" uid="uid://8biqt0i44s68" path="res://scenes/ui/win_game_menu.tscn" id="3_u3e7h"]
+[ext_resource type="PackedScene" uid="uid://0qm2t8brw8jq" path="res://scenes/ui/win_game_menu.tscn" id="3_u3e7h"]
 [ext_resource type="PackedScene" uid="uid://b6w7oh4omg086" path="res://scenes/ui/highscore_menu.tscn" id="4_pc63v"]
+[ext_resource type="PackedScene" uid="uid://8biqt0i44s68" path="res://scenes/ui/controls_menu.tscn" id="5_ineev"]
 
 [sub_resource type="Animation" id="Animation_wqq3p"]
 resource_name = "RESET"
@@ -50,6 +51,7 @@ script = ExtResource("1_rpx2h")
 main_menu = ExtResource("2_83ljo")
 win_game_menu = ExtResource("3_u3e7h")
 highscore_menu = ExtResource("4_pc63v")
+controls_menu = ExtResource("5_ineev")
 
 [node name="DissolveRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

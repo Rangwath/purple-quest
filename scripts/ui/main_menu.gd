@@ -25,3 +25,7 @@ func _on_play_button_pressed():
 
 func _on_highscore_button_pressed():
 	SceneTransition.load_highscore_menu_scene()
+
+
+func _on_controls_button_pressed():
+	SceneTransition.load_controls_menu_scene()

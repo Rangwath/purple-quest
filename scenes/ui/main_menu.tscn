@@ -49,9 +49,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = -16.5
+offset_top = -35.0
 offset_right = 60.0
-offset_bottom = 16.5
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_oi7tc")
@@ -66,14 +66,31 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -30.0
-offset_top = 35.0
+offset_top = 18.0
 offset_right = 30.0
-offset_bottom = 56.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_oi7tc")
 theme_override_font_sizes/font_size = 10
 text = "HIGHSCORE"
+
+[node name="ControlsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 55.0
+offset_right = 30.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_oi7tc")
+theme_override_font_sizes/font_size = 10
+text = "CONTROLS"
 
 [node name="CopyrightLabel" type="Label" parent="."]
 layout_mode = 1
@@ -89,7 +106,7 @@ text = "© 2024 RGWGAMES"
 label_settings = SubResource("LabelSettings_nxut6")
 vertical_alignment = 1
 
-[node name="CopyrightLabel2" type="Label" parent="."]
+[node name="VersionLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -106,3 +123,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="HighscoreButton" to="." method="_on_highscore_button_pressed"]
+[connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]

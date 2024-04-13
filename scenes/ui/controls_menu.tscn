@@ -1,0 +1,214 @@
+[gd_scene load_steps=5 format=3 uid="uid://8biqt0i44s68"]
+
+[ext_resource type="FontFile" uid="uid://yaxi3v0erdfl" path="res://assets/fonts/munro.ttf" id="1_e54ib"]
+[ext_resource type="Script" path="res://scripts/ui/controls_menu.gd" id="1_tuea0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gkhb2"]
+font = ExtResource("1_e54ib")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_78ywu"]
+line_spacing = 1.0
+font = ExtResource("1_e54ib")
+font_size = 10
+
+[node name="ControlsMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tuea0")
+metadata/_edit_vertical_guides_ = [240.0]
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0.141176, 0.380392, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 480.0
+offset_bottom = 83.0
+text = "CONTROLS"
+label_settings = SubResource("LabelSettings_gkhb2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 30.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_e54ib")
+theme_override_font_sizes/font_size = 10
+text = "MAIN MENU"
+
+[node name="KeyboardLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -54.0
+offset_right = -54.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEYBOARD
+-------------"
+label_settings = SubResource("LabelSettings_78ywu")
+horizontal_alignment = 1
+
+[node name="ActionBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -15.0
+offset_right = -123.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActionLabel1" type="Label" parent="ActionBoxContainer"]
+layout_mode = 2
+text = "MOVEMENT"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ActionLabel2" type="Label" parent="ActionBoxContainer"]
+layout_mode = 2
+text = "SHORT JUMP"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ActionLabel3" type="Label" parent="ActionBoxContainer"]
+layout_mode = 2
+text = "LONG JUMP"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ControlBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -15.0
+offset_right = -31.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlLabel1" type="Label" parent="ControlBoxContainer"]
+layout_mode = 2
+text = "ARROWS / WASD"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ControlLabel2" type="Label" parent="ControlBoxContainer"]
+layout_mode = 2
+text = "SPACE (TAP)"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ControlLabel3" type="Label" parent="ControlBoxContainer"]
+layout_mode = 2
+text = "SPACE (HOLD)"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="GamepadLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = -54.0
+offset_right = 155.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAMEPAD (XBOX)
+-------------------"
+label_settings = SubResource("LabelSettings_78ywu")
+horizontal_alignment = 1
+
+[node name="ActionBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 42.0
+offset_top = -15.0
+offset_right = 86.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActionLabel1" type="Label" parent="ActionBoxContainer2"]
+layout_mode = 2
+text = "MOVEMENT"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ActionLabel2" type="Label" parent="ActionBoxContainer2"]
+layout_mode = 2
+text = "SHORT JUMP"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ActionLabel3" type="Label" parent="ActionBoxContainer2"]
+layout_mode = 2
+text = "LONG JUMP"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ControlBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 114.0
+offset_top = -15.0
+offset_right = 178.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlLabel1" type="Label" parent="ControlBoxContainer2"]
+layout_mode = 2
+text = "LEFT STICK / DPAD"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ControlLabel2" type="Label" parent="ControlBoxContainer2"]
+layout_mode = 2
+text = "A (TAP)"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[node name="ControlLabel3" type="Label" parent="ControlBoxContainer2"]
+layout_mode = 2
+text = "A (HOLD)"
+label_settings = SubResource("LabelSettings_78ywu")
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
